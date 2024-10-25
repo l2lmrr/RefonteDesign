@@ -24,12 +24,21 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 const playButton = document.getElementById('play-button');
+const closeButton = document.getElementById('close-button');
 const videoContainer = document.getElementById('video-container');
 const introVideo = document.getElementById('intro-video');
 
 playButton.addEventListener('click', () => {
     videoContainer.classList.remove('hidden');
-    // introVideo.src = 'https://www.youtube.com/embed/1vVk3_PFtOg?autoplay=1';
+    videoContainer.classList.add('fixed', 'inset-0', 'z-50', 'flex', 'items-center', 'justify-center', 'bg-black');
+    introVideo.src = 'https://www.youtube.com/embed/b28zbsnk-48?autoplay=1';
+    introVideo.classList.add('w-full', 'h-full');
+});
+
+closeButton.addEventListener('click', () => {
+    videoContainer.classList.add('hidden');
+    videoContainer.classList.remove('fixed', 'inset-0', 'z-50', 'flex', 'items-center', 'justify-center', 'bg-black');
+    introVideo.src = '';
 });
 
 
